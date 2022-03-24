@@ -5,11 +5,11 @@
     <a href="home" class="logo">
         <!-- logo mini -->
         <span class="logo-mini">
-            <img src="views/img/templates/logo-mini5.png" alt="logo-mini" srcset="" class="img-responsive" style="padding:1px">
+            <img src="views/img/templates/logo-mini.png" alt="logo-mini" srcset="" class="img-responsive" style="padding:1px">
         </span>
             <!-- logo normal -->
         <span class="logo-lg">
-        <img src="views/img/templates/logo-normal.png" alt="logo-normal" srcset=""  class="img-responsive" style="padding:10px 0px">
+        <img src="views/img/templates/logo-largo.png" alt="logo-normal" srcset=""  class="img-responsive" style="width: 17rem; padding: 0.4rem 0rem 0rem 2rem">
         </span>
     </a>
 
@@ -35,7 +35,7 @@
                     <ul class="dropdown-menu">
                         <li class="user-body">
                             <div class="pull-right">
-                                <a href="#" class="btn btn-default btn-flat">Salir</a>
+                                <a href="exit" class="btn btn-default btn-flat">Salir</a>
                             </div>
                         </li>
                     </ul>

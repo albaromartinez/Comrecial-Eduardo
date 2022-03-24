@@ -610,6 +610,7 @@ a:focus {
   .sidebar-mini.sidebar-collapse .sidebar-menu > li > a > .pull-right,
   .sidebar-mini.sidebar-collapse .sidebar-menu li.header {
     display: none !important;
+    transform: translateZ(0); /* aumentado for me */
     -webkit-transform: translateZ(0);
   }
   .sidebar-mini.sidebar-collapse .main-header .logo {
@@ -2357,6 +2358,10 @@ a:focus {
   background-color: #3c8dbc;
   border-color: #367fa9;
 }
+.btm-primary-modi{
+  margin: 1rem 0rem;
+  border-radius: 10%;
+}
 .btn-primary:hover,
 .btn-primary:active,
 .btn-primary.hover {
@@ -3394,8 +3399,25 @@ table.text-center th {
 }
 .login-page,
 .register-page {
-  background: #d2d6de;
+  background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
+  /* background: linear-gradient(rgba(0,0,0,1), rgba(0,30,50,1)); */
 }
+
+/* added by me */
+.login-page #back{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url(../../img/login/shop.webp);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  z-index: -1;
+  
+}
+
 .login-box,
 .register-box {
   width: 360px;
@@ -3410,10 +3432,11 @@ table.text-center th {
 }
 .login-box-body,
 .register-box-body {
-  background: #fff;
+  background: rgb(255, 255, 255);
   padding: 20px;
   border-top: 0;
   color: #666;
+  border-radius: 1%;
 }
 .login-box-body .form-control-feedback,
 .register-box-body .form-control-feedback {

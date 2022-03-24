@@ -1,16 +1,16 @@
 <div id="back">
     <div class="login-box" >
-      <div class="login-logo">
-        <a href="login"><img src="#" alt="logo" class="img-responsive" style="padding:30px 100px 0px 100px"></a>
-      </div>
       <!-- /.login-logo -->
       <div class="login-box-body">
-        <p class="login-box-msg">Registrate para iniciar session</p>
+        <div class="login-logo">
+          <a href="login"><img src="views/img/templates/logo-mini-negro.png" alt="logo" class="img-responsive " style="padding:15px 10px 0px 10px; "></a>
+        </div>
+        <h4 class="login-box-msg">Registrate para iniciar sessión</h4>
 
-        <form  method="post">
+        <form  method="POST">
 
           <div class="form-group has-feedback">
-            <input type="text" class="form-control" placeholder="Usuario" name="ingUsuario" required>
+            <input type="text" class="form-control" placeholder="Usuario" name="ingUser" required>
             <span class="fa fa-user form-control-feedback"></span>
           </div>
 
@@ -19,20 +19,13 @@
             <span class="fa fa-key form-control-feedback"></span>
           </div>
 
-          <div class="row">
-            <div class="col-xs-8">
-              <div class="checkbox icheck">
-                <label>
-                  <input type="checkbox"> Recuerdame
-                </label>
-              </div>
-            </div>
-            <!-- /.col -->
-            <div class="col-xs-4">
-              <button type="submit" class="btn btn-primary btn-block btn-flat">Ingresar</button>
-            </div>
-            <!-- /.col -->
-          </div>
+          <button type="submit" class="btn btn-primary btm-primary-modi btn-block btn-flat ">Ingresar</button>
+
+          <?php
+            $login = new ControllerUsers();
+            $login -> ctrUserLogin();
+ 
+          ?>
 
         </form>
 

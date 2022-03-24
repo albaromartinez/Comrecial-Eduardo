@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +12,7 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=no" name="viewport">
 
   <!-- icino encabezado -->
-  <link rel="icon" href="views/img/templates/logo-mini5.png">
+  <link rel="icon" href="views/img/templates/logo-mini.png">
   <!-- 
                 CSS PLUGINS
    -->
@@ -45,12 +49,15 @@
    <!-- 
                 DOCUMENT BODY
    -->
-<body class="hold-transition skin-green sidebar-collapse sidebar-mini">
+<body class="hold-transition skin-green sidebar-collapse sidebar-mini login-page">
 <!-- Site wrapper -->
-<div class="wrapper">
-
 
     <?php
+    if(isset($_SESSION["logIn"]) && $_SESSION["logIn"] == "okey"){
+
+    
+    // <!-- Site wrapper -->
+    echo '<div class="wrapper">';
         /* ========================================================
                     CABECERA - HEADER
         ============================================================= */
@@ -74,7 +81,8 @@
           $_GET["ruta"] == "reports" || 
           $_GET["ruta"] == "providers" || 
           $_GET["ruta"] == "notes" || 
-          $_GET["ruta"] == "backups" ){
+          $_GET["ruta"] == "backups" ||
+          $_GET["ruta"] == "exit"){
             include "modules/".$_GET["ruta"].".php";
           }else {
             include "modules/error-404.php";
@@ -87,11 +95,15 @@
                     footer
         ==============================*/
         include "modules/footer.php";
+    echo "</div>";
+    // <!-- ./wrapper -->
+    }else{
+      include "views/modules/login.php";
+    }
     ?>
 
 
-</div>
-<!-- ./wrapper -->
+
 
 <script src="views/js/template.js"></script>
 </body>
