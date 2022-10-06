@@ -18,7 +18,7 @@
       <div class="box">
         <!-- box-header -->
         <div class="box-header with-border">
-          <button type="button" class="btn btn-primary cleanImputs" data-toggle="modal" data-target="#modalAddUser" >
+          <button class="btn btn-primary" data-toggle="modal" data-target="#modalAddUser" >
             Agregar usuario
           </button>
 
@@ -68,7 +68,7 @@
 
                 <tr>
                   <td>1</td>
-                  <td>Juan</td>
+                  <td>Administrador</td>
                   <td>Admin</td>
                   <td><img src="views/img/users/default/anonymous.jpg" alt="user"  width="40px"></td>
                   <td>Perfil</td>
@@ -92,7 +92,7 @@
 
                 <tr>
                   <td>1</td>
-                  <td>Raul</td>
+                  <td>Administrador</td>
                   <td>Admin</td>
                   <td><img src="views/img/users/default/anonymous.jpg" alt="user"  width="40px"></td>
                   <td>Perfil</td>
@@ -135,76 +135,69 @@
 
     <!-- Modal content-->
     <div class="modal-content">
-      <form role="form" method="post" enctype="multipart/form-data">
+      <form  role="form" action="POST" enctype="multipart/form-data">
         <!-- FORM HEADER -->
-          <div class="modal-header " style="background-color:#3c8dbc; text-align:center; color:white">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title " >Agregar usuario</h4>
-          </div>
-  
-          <!-- FORM BODY -->
-          <div class="modal-body">
-            <div class="box-body">
-              <!--  input name -->
-              <div class="form-group">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                  <input class="form-control input-lg limpiar" type="text" name="newName" placeholder="Ingresar nombre" required autocomplete="off">
-                </div>
-              </div>
-  
-              <!--  input user -->
-              <div class="form-group">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                  <input class="form-control input-lg limpiar" type="text" name="newUserName" placeholder="Ingresar nombre de usuario" required autocomplete="off">
-                </div>
-              </div>
-  
-               <!--  input password -->
-              <div class="form-group">
-                <div class="input-group">
-                  <span class="input-group-addon "><i class="fa fa-lock"></i></span>
-                  <input class="form-control input-lg limpiar" type="password" name="newPassword" placeholder="Ingresar contraceña" required autocomplete="off">
-                </div>
-              </div>  
-  
-              <!--  perfil selection -->
-              <div class="form-group">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-users"></i></span>
-                  <select class="form-control input-lg"  name="newPerfil"  required>
-                    <option value="" >Seleccione un perfil</option>
-                    <option value="Administrador">Administrador</option>
-                    <option value="Especial">Especial</option>
-                    <option value="Vendedor">Vendedor</option>
-                  <select/>
-                </div>
-              </div>
-  
-              <!-- upload photo-->
-              <div class="form-group">
-                <div class="panel "> <strong> SUBIR FOTO</strong> </div>
-                <input type="file" class="newPhoto limpiar" name="newPhoto" autocomplete="off"><p class="help-block">Peso maximo de la foto 10 MB</p>
-                <img src="views/img/users/default/user.png" alt="user" class="img-thumbnail previsualizar" width="100rem">
-              </div>  
-  
-            </div>
-          </div>
-          <!-- FOOTER MODAL -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
-            <input type="submit" class="btn btn-primary "  value="Agregar Usuario">
-          </div>
+         <div class="modal-header " style="background-color:#3c8dbc; text-align:center; color:white">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4 class="modal-title " >Agregar usuario</h4>
+         </div>
 
+         <!-- FORM BODY -->
+         <div class="modal-body">
+           <div class="box-body">
+             <!--  input name -->
+             <div class="form-group">
+               <div class="input-group">
+                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                 <input class="form-control input-lg" type="text" name="newName" placeholder="Ingresar nombre" required>
+               </div>
+             </div>
 
-            <?php
-              $addUser = new ControllerUsers();
-              $addUser -> ctrAddUser();
-            ?>
+             <!--  input user -->
+             <div class="form-group">
+               <div class="input-group">
+                 <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                 <input class="form-control input-lg" type="text" name="newUserName" placeholder="Ingresar nombre de usuario" required>
+               </div>
+             </div>
 
+              <!--  input password -->
+             <div class="form-group">
+               <div class="input-group">
+                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                 <input class="form-control input-lg" type="password" name="newPassword" placeholder="Ingresar ontraceña" required>
+               </div>
+             </div>  
+
+             <!--  perfil selection -->
+             <div class="form-group">
+               <div class="input-group">
+                 <span class="input-group-addon"><i class="fa fa-users"></i></span>
+                 <select class="form-control input-lg"  name="newPerfil"  required>
+                   <option value="">Seleccionar perfil</option>
+                   <option value="">Administrador</option>
+                   <option value="">Especial</option>
+                   <option value="">Vendedor</option>
+                 <select/>
+               </div>
+             </div>
+
+             <!-- upload photo-->
+             <div class="form-group">
+               <div class="panel "> <strong> SUBIR FOTO</strong> </div>
+               <input type="file" id="newPhoto" name="newphoto" ><p class="help-block">Peso maximo de la foto 10 MB</p>
+               <img src="views/img/users/default/user.png" alt="user" class="img-thumbnail" width="100rem">
+
+             </div>  
+
+           </div>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
+           <button type="submit" class="btn btn-primary" data-dismiss="modal">Agregar usuario</button>
+         </div>
+        </div>
       </form>
-    </div>
-    <!-- /. Modal content-->
+      
   </div>
 </div>

@@ -28,8 +28,15 @@
             <ul class="nav navbar-nav">
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="views/img/users/default/anonymous.jpg" alt="anonymous" srcset="" class="user-image">    
-                        <span class="hidden-xs">Admin name</span>
+                        <?php
+                            if($_SESSION['photo'] != ''){
+                                echo '<img src="'.$_SESSION['photo'].'" alt="anonymous" srcset="" class="user-image"> ';    
+                            }else{
+                                echo '<img src="views/img/users/default/anonymous.jpg" alt="anonymous" srcset="" class="user-image"> ';    
+
+                            }
+                        ?>
+                        <span class="hidden-xs"> <?php echo $_SESSION['name']; ?> </span>
                     </a>
                     <!-- dropdown-toggle -->
                     <ul class="dropdown-menu">

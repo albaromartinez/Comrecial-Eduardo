@@ -10,12 +10,12 @@
         <form  method="POST">
 
           <div class="form-group has-feedback">
-            <input type="text" class="form-control" placeholder="Usuario" name="ingUser" required>
+            <input type="text" class="form-control" placeholder="Usuario" name="ingUser" required autocomplete="off">
             <span class="fa fa-user form-control-feedback"></span>
           </div>
 
           <div class="form-group has-feedback">
-            <input type="password" class="form-control" placeholder="Contraceña" name="ingPassword" required>
+            <input type="password" class="form-control" placeholder="Contraceña" name="ingPassword" required autocomplete="off">
             <span class="fa fa-key form-control-feedback"></span>
           </div>
 
